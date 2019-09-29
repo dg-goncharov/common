@@ -16,7 +16,7 @@ def is_two_object_has_same_value(first: Any, second: Any) -> bool:
     If @first and @second has same value should return True
     In another case should return False
     """
-    return first==second
+    return first == second
 
 
 def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
@@ -27,14 +27,12 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     return type(first) == type(second)
 
 
-
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     """
     If @first and @second has same type should return True
     In another case should return False
     """
     return first is second
-
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -52,11 +50,9 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         Product of elements
     """
     if type(first_value) is type(second_value) is int:
-        return  first_value*second_value
+        return first_value*second_value
     else:
         raise ValueError("Not valid input data")
-
-
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -87,17 +83,15 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
         >>> "Not valid input data"
     """
     try:
-        return  multiple_ints(int(first_value), int(second_value))
+        return multiple_ints(int(first_value), int(second_value))
     except TypeError:
-         raise ValueError("Not valid input data")
-
+        raise ValueError("Not valid input data")
 
 
 def is_word_in_text(word: str, text: str) -> bool:
     """
     If text contain word return True
     In another case return False.
-
     Args:
         word: Searchable substring
         text: Text for searching
@@ -109,7 +103,7 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    return text.find(word)!= -1
+    return text.find(word) != -1
 
 
 def some_loop_exercise() -> list:
@@ -118,7 +112,7 @@ def some_loop_exercise() -> list:
     """
     result = []
     for i in range(13):
-        if i not in (6,7):
+        if i not in (6, 7):
             result.append(i)
     return result
 
@@ -147,7 +141,7 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    return  dict(zip(range(1, 27), string.ascii_lowercase))
+    return dict(zip(range(1, 27), string.ascii_lowercase))
 
 
 def simple_sort(data: List[int]) -> List[list]:
@@ -162,11 +156,10 @@ def simple_sort(data: List[int]) -> List[list]:
     for i in range(len(data)):
         min_val = i
         for j in range(i + 1, len(data)):
-        # Select the smallest value
+            # Select the smallest value
             if data[j] < data[min_val]:
                 min_val = j
         # Place it at the front of the sorted list
         data[min_val], data[i] = data[i], data[min_val]
 
     return data
-
